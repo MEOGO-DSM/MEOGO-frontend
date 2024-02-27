@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MEOGO-frontend",
-    "slug": "MEOGO-frontend",
+    "name": "timer",
+    "slug": "timer",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -12,7 +12,7 @@
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
-      "./assets/fonts/"
+      "**/*"
     ],
     "ios": {
       "supportsTablet": true
