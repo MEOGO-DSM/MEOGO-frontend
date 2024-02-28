@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import { Text, View } from "react-native";
-import { Dadeock, BookMark, StyledStar } from "../styles/svgs";
+import { Dadeock, BookMark, StyledStar } from "../styles/svgs.jsx";
 import { color } from "../styles/colors.jsx";
 import { fonts } from "../styles/fonts.jsx";
 
@@ -51,7 +51,6 @@ const Container = styled.View`
   background-color: white;
   border-radius: 12px;
   gap: 6;
-  display: flex;
 `;
 
 const InfoFlex = styled.View`
@@ -69,7 +68,7 @@ const Info = styled.View`
 `;
 
 const ReviewWrap = styled.View`
-display: flex;
-flex-direction: row;
-gap: 4;
+  display: flex;
+  flex-direction: row;
+  gap: 4;
 `;

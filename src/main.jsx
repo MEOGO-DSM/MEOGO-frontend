@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import { Text, View } from "react-native";
 import Header from "../components/Header.jsx";
 import Info from "../components/Info.jsx";
-import RecommendBox from "../components/RecommendBox.jsx";
+import Recommend from "../components/Recommend.jsx";
 import Post from "../components/Post.jsx";
 import { color } from "../styles/colors.jsx";
 import { fonts } from "../styles/fonts.jsx";
@@ -22,8 +22,8 @@ export default function Main() {
           근처 대학교 추천
         </Text>
         <HorizontalScroll>
-          <RecommendBox />
-          <RecommendBox />
+          <Recommend />
+          <Recommend />
         </HorizontalScroll>
       </Wrap>
 

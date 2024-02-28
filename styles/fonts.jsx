@@ -70,6 +70,11 @@ export const fonts = StyleSheet.create({
       lineHeight: 20,
       fontWeight: "600",
     },
+    "Subtitle 14px SemiBold": {
+      fontSize: 14,
+      lineHeight: 18,
+      fontWeight: 600
+    }
   },
 
   Body: {

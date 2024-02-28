@@ -18,11 +18,11 @@ export default function Post() {
         </Info>
 
         <Contents >
-            <Title>아진짜대마고</Title>
+            <Text style={fonts.Subtitle["Subtitle 14px SemiBold"]}>아진짜대마고</Text>
             <Text>폭발시켜버릴거다</Text>
         </Contents>
 
-        <Bottom>
+        <Footer>
             <Text style={{ ...fonts.Captions["Captions 12 Medium"], color: color.Gray[400] }}>대마고 게시판</Text>
             <CommentLikeBox>
                 <IconFlex>
@@ -34,7 +34,7 @@ export default function Post() {
                     <Text style={{ ...fonts.Captions["Captions 12 Medium"], color: color.Gray[400] }}>21</Text>
                 </IconFlex>
             </CommentLikeBox>
-        </Bottom>
+        </Footer>
       </Container>
     </View>
   );
@@ -69,13 +69,7 @@ display: flex;
 gap: 4;
 `
 
-const Title = styled.Text`
-font-size: 14px;
-font-weight: 600;
-line-height: 18px;
-`
-
-const Bottom = styled.View`
+const Footer = styled.View`
 display: flex;
 flex-direction: row;
 justify-content: space-between;
