@@ -1,5 +1,5 @@
 import React from "react";
-import { styled } from "styled-components";
+import styled from "styled-components/native";
 import { Text, View } from "react-native";
 import {
   Alert,
@@ -10,11 +10,20 @@ import {
   Map,
   Review,
   School,
-} from "../styles/svgs";
+} from "../styles/svgs.jsx";
 import { color } from "../styles/colors.jsx";
 import { fonts } from "../styles/fonts.jsx";
 
+
 export default function SchoolInfo() {
+  const bar = [
+    { logo: Info, name: "정보" },
+    { logo: Review, name: "리뷰" },
+    { logo: CommunityBoard, name: "커뮤니티" },
+    { logo: HomePage, name: "홈페이지" },
+    { logo: Map, name: "지도" },
+  ];
+
   return (
     <View>
       <Container>
@@ -51,37 +60,22 @@ export default function SchoolInfo() {
         </InfoBox>
 
         <Contents>
-          <Icon>
-            <Info />
-            <Caption>정보</Caption>
-          </Icon>
-          <Icon>
-            <Review />
-            <Caption>리뷰</Caption>
-          </Icon>
-          <Icon>
-            <CommunityBoard />
-            <Caption>커뮤니티</Caption>
-          </Icon>
-          <Icon>
-            <HomePage />
-            <Caption>홈페이지</Caption>
-          </Icon>
-          <Icon>
-            <Map />
-            <Caption>지도</Caption>
-          </Icon>
+          {bar.map((item, index) => (
+            <Icons key={index}>
+              <item.logo />
+              <Name>{item.name}</Name>
+            </Icons>
+          ))}
         </Contents>
       </Container>
     </View>
   );
 }
 
-const Container = styled.View`
-  margin: 0px 25px;
-`;
+const Container = styled.View``;
 
 const AlertBox = styled.View`
+  display: flex;
   flex-direction: row;
   margin: 8px 0px;
 `;
@@ -94,13 +88,13 @@ const InfoBox = styled.View`
   align-items: center;
   flex-direction: row;
   gap: 12;
-  margin: 0px 4px;
   padding: 0px 16px;
   border-radius: 8px;
 `;
 
 const SchoolDetails = styled.View`
   width: 237px;
+  height: 42px;
 `;
 
 const Contents = styled.View`
@@ -112,12 +106,12 @@ const Contents = styled.View`
   padding: 16px 6px 24px;
 `;
 
-const Icon = styled.View`
+const Icons = styled.View`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const Caption = styled.Text`
+const Name = styled.Text`
   margin: 8px 0px;
 `;

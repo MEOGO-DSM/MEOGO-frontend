@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import { Text, View } from "react-native";
 import Header from "../components/Header.jsx";
-import SchoolInfo from "../components/SchoolInfo.jsx";
+import Info from "../components/Info.jsx";
 import RecommendBox from "../components/RecommendBox.jsx";
 import Post from "../components/Post.jsx";
 import { color } from "../styles/colors.jsx";
@@ -14,7 +14,7 @@ export default function Main() {
       
       <Background>
         <Header />
-        <SchoolInfo />
+        <Info />
       </Background>
 
       <Wrap>
