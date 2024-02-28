@@ -1,11 +1,11 @@
 import React from "react";
-import { styled } from "styled-components";
+import styled from "styled-components/native";
 import { Text, View } from "react-native";
-import { Dadeock, BookMark, StyledStar } from "../styles/svgs.jsx";
-import { color } from "../styles/colors.jsx";
-import { fonts } from "../styles/fonts.jsx";
+import { Dadeock, BookMark, StyledStar } from "../../styles/svgs";
+import { color } from "../../styles/colors";
+import { fonts } from "../../styles/fonts";
 
-export default function RecommendBox() {
+function RecommendBox() {
   return (
     <View>
       <Container>
@@ -24,7 +24,7 @@ export default function RecommendBox() {
           대전 유성구 장동
         </Text>
         <ReviewWrap>
-          <StyledStar/>
+          <StyledStar />
           <Text
             style={{ ...fonts.Body["Body 16 Medium"], color: color.Gray[600] }}
           >
@@ -44,13 +44,15 @@ export default function RecommendBox() {
   );
 }
 
+export default RecommendBox;
+
 const Container = styled.View`
   width: 233px;
   height: 122px;
   padding: 16px;
   background-color: white;
   border-radius: 12px;
-  gap: 6;
+  gap: 6px;
 `;
 
 const InfoFlex = styled.View`
@@ -64,11 +66,11 @@ const Info = styled.View`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 6;
+  gap: 6px;
 `;
 
 const ReviewWrap = styled.View`
   display: flex;
   flex-direction: row;
-  gap: 4;
+  gap: 4px;
 `;

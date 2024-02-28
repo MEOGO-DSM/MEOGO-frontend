@@ -10,12 +10,11 @@ import {
   Map,
   Review,
   School,
-} from "../styles/svgs.jsx";
-import { color } from "../styles/colors.jsx";
-import { fonts } from "../styles/fonts.jsx";
+} from "../../styles/svgs";
+import { color } from "../../styles/colors";
+import { fonts } from "../../styles/fonts";
 
-
-export default function SchoolInfo() {
+function SchoolInfo() {
   const bar = [
     { logo: Info, name: "정보" },
     { logo: Review, name: "리뷰" },
@@ -60,17 +59,22 @@ export default function SchoolInfo() {
         </InfoBox>
 
         <Contents>
-          {bar.map((item, index) => (
-            <Icons key={index}>
-              <item.logo />
-              <Name>{item.name}</Name>
-            </Icons>
-          ))}
+          {bar.map((item, index) => {
+            const LogoComponent = item.logo;
+            return (
+              <Icons key={index}>
+                <LogoComponent />
+                <Name>{item.name}</Name>
+              </Icons>
+            );
+          })}
         </Contents>
       </Container>
     </View>
   );
 }
+
+export default SchoolInfo;
 
 const Container = styled.View``;
 
@@ -87,7 +91,7 @@ const InfoBox = styled.View`
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
-  gap: 12;
+  gap: 12px;
   padding: 0px 16px;
   border-radius: 8px;
 `;

@@ -1,20 +1,19 @@
 import React from "react";
-import { styled } from "styled-components";
+import styled from "styled-components/native";
 import { Text, View } from "react-native";
-import Header from "../components/Header.jsx";
-import Info from "../components/Info.jsx";
-import Recommend from "../components/Recommend.jsx";
-import Post from "../components/Post.jsx";
-import { color } from "../styles/colors.jsx";
-import { fonts } from "../styles/fonts.jsx";
+import Header from "./components/Header";
+import SchoolInfo from "./components/SchoolInfo";
+import RecommendBox from "./components/Recommend";
+import Post from "./components/Post";
+import { color } from "../styles/colors";
+import { fonts } from "../styles/fonts";
 
 export default function Main() {
   return (
     <Container backgroundColor={color.Gray[100]}>
-      
       <Background>
         <Header />
-        <Info />
+        <SchoolInfo />
       </Background>
 
       <Wrap>
@@ -22,20 +21,26 @@ export default function Main() {
           근처 대학교 추천
         </Text>
         <HorizontalScroll>
-          <Recommend />
-          <Recommend />
+          <RecommendBox />
+          <RecommendBox />
         </HorizontalScroll>
       </Wrap>
 
       <Wrap>
         <TitleFlex>
-          <Text style={fonts.Subtitle["Subtitle 18 SemiBold"]}>전체 인기글</Text>
-          <Text style={{ ...fonts.Body["Body 14 Medium"], color: color.Blue[600] }}>더보기</Text>
+          <Text style={fonts.Subtitle["Subtitle 18 SemiBold"]}>
+            전체 인기글
+          </Text>
+          <Text
+            style={{ ...fonts.Body["Body 14 Medium"], color: color.Blue[600] }}
+          >
+            더보기
+          </Text>
         </TitleFlex>
         <PostWrap>
-          <Post/>
-          <Post/>
-          <Post/>
+          <Post />
+          <Post />
+          <Post />
         </PostWrap>
       </Wrap>
     </Container>
@@ -61,28 +66,28 @@ const Background = styled.View`
 `;
 
 const Wrap = styled.View`
-margin: 24px 0px 0px;
-gap: 16
+  margin: 24px 0px 0px;
+  gap: 16px;
 `;
 
 const HorizontalScroll = styled.View`
-width: 357px;
-height: 122px;
-display: flex;
-flex-direction: row;
-gap: 12;
-`
+  width: 357px;
+  height: 122px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+`;
 
 const TitleFlex = styled.View`
-display: flex;
-width: 357px;
-flex-direction: row;
-justify-content: space-between;
-`
+  display: flex;
+  width: 357px;
+  flex-direction: row;
+  justify-content: space-between;
+`;
 
 const PostWrap = styled.View`
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 8;
-`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+`;

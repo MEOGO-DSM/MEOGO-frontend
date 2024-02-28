@@ -1,21 +1,21 @@
 import React from "react";
-import { styled } from "styled-components";
+import styled from "styled-components/native";
 import { Dimensions, Text, View } from "react-native";
-import Logo from "../public/assets/Logo.svg";
-import { Search, Bell, User } from "../styles/svgs";
+import Logo from "../../public/assets/Logo.svg";
+import { Search, Bell, User } from "../../styles/svgs";
 
 function Header() {
   return (
-      <Container>
-        <HeaderBox>
-          <Logo />
-          <InnerContainer>
-            <Search />
-            <Bell />
-            <User />
-          </InnerContainer>
-        </HeaderBox>
-      </Container>
+    <Container>
+      <HeaderBox>
+        <Logo />
+        <InnerContainer>
+          <Search />
+          <Bell />
+          <User />
+        </InnerContainer>
+      </HeaderBox>
+    </Container>
   );
 }
 
@@ -38,5 +38,5 @@ const InnerContainer = styled.View`
   display: flex;
   flex-direction: row;
   margin: 0px 15px;
-  gap: 20;
+  gap: 20px;
 `;
