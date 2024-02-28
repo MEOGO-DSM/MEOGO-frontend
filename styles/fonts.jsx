@@ -1,127 +1,127 @@
 import { StyleSheet } from "react-native";
 
-const fonts = StyleSheet.create({
+export const fonts = StyleSheet.create({
   Titles: {
     "Title 40 SemiBold": {
-      fontsize: "40px",
-      lineHeight: "52px",
+      fontSize: 40,
+      lineHeight: 52,
       fontWeight: "600",
     },
     "Title 36 SemiBold": {
-      fontsize: "36px",
-      lineHeight: "48px",
+      fontSize: 36,
+      lineHeight: 48,
       fontWeight: "600",
     },
     "Title 32 SemiBold": {
-      fontsize: "32px",
-      lineHeight: "44px",
+      fontSize: 32,
+      lineHeight: 44,
       fontWeight: "600",
     },
     "Title 24 SemiBold": {
-      fontsize: "24px",
-      lineHeight: "36px",
+      fontSize: 24,
+      lineHeight: 36,
       fontWeight: "600",
     },
     "Title 24 Medium": {
-      fontsize: "24px",
-      lineHeight: "36px",
+      fontSize: 24,
+      lineHeight: 36,
       fontWeight: "500",
     },
   },
 
-  Subtitle : {
+  Subtitle: {
     "Subtitle 20 Bold": {
-      fontsize: "20px",
-      lineHeight: "24px",
+      fontSize: 20,
+      lineHeight: 24,
       fontWeight: "700",
     },
     "Subtitle 20 Medium": {
-      fontsize: "20px",
-      lineHeight: "24px",
+      fontSize: 20,
+      lineHeight: 24,
       fontWeight: "500",
     },
     "Title 32 SemiBold": {
-      fontsize: "32px",
-      lineHeight: "44px",
+      fontSize: 32,
+      lineHeight: 44,
       fontWeight: "600",
     },
     "Subtitle 18 Bold": {
-      fontsize: "18px",
-      lineHeight: "22px",
+      fontSize: 18,
+      lineHeight: 22,
       fontWeight: "700",
     },
     "Subtitle 18 SemiBold": {
-        fontsize: "18px",
-        lineHeight: "22px",
-        fontWeight: "600",
-      },
+      fontSize: 18,
+      lineHeight: 22,
+      fontWeight: "600",
+    },
     "Subtitle 18 Medium": {
-      fontsize: "18px",
-      lineHeight: "22px",
+      fontSize: 18,
+      lineHeight: 22,
       fontWeight: "500",
     },
     "Subtitle 18 Regular": {
-        fontsize: "18px",
-        lineHeight: "22px",
-        fontWeight: "400",
-      },
-      "Subtitle 16 SemiBold": {
-        fontsize: "16px",
-        lineHeight: "20px",
-        fontWeight: "600",
-      },
+      fontSize: 18,
+      lineHeight: 22,
+      fontWeight: "400",
+    },
+    "Subtitle 16 SemiBold": {
+      fontSize: 16,
+      lineHeight: 20,
+      fontWeight: "600",
+    },
   },
 
   Body: {
     "Body 16 Medium": {
-      fontsize: "16px",
-      lineHeight: "20px",
+      fontSize: 16,
+      lineHeight: 20,
       fontWeight: "500",
     },
     "Body 16 Regular": {
-      fontsize: "16px",
-      lineHeight: "20px",
+      fontSize: 16,
+      lineHeight: 20,
       fontWeight: "400",
     },
     "Body 14 Medium": {
-      fontsize: "14px",
-      lineHeight: "18px",
+      fontSize: 14,
+      lineHeight: 18,
       fontWeight: "500",
     },
     "Body 14 Regular": {
-      fontsize: "14px",
-      lineHeight: "18px",
+      fontSize: 14,
+      lineHeight: 18,
       fontWeight: "400",
     },
   },
 
   Captions: {
     "Captions 12 Medium": {
-      fontsize: "12px",
-      lineHeight: "14px",
+      fontSize: 12,
+      lineHeight: 14,
       fontWeight: "500",
     },
     "Captions 12 Regular": {
-      fontsize: "12px",
-      lineHeight: "14px",
+      fontSize: 12,
+      lineHeight: 14,
       fontWeight: "400",
     },
   },
 
   Action: {
-    "Button14": {
-      fontsize: "14px",
-      lineHeight: "18px",
+    Button14: {
+      fontSize: 14,
+      lineHeight: 18,
       fontWeight: "500",
     },
-    "Button12": {
-        fontsize: "12px",
-        lineHeight: "14px",
-        fontWeight: "500",
-      },
-    "Link14": {
-      fontsize: "14px",
-      lineHeight: "18px",
+    Button12: {
+      fontSize: 12,
+      lineHeight: 14,
+      fontWeight: "500",
+    },
+    Link14: {
+      fontSize: 14,
+      lineHeight: 18,
       fontWeight: "600",
     },
   },
