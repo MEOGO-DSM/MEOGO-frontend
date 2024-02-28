@@ -1,13 +1,11 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import { Ca } from "./styles/svgs";
+import Login from "./src/login/page";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>MEOGO?</Text>
-      <Ca />
-      <StatusBar style="auto" />
+      <Login />
     </View>
   );
 }
