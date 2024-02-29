@@ -1,10 +1,17 @@
 import React, { useState } from "react";
-import { View, TextInput, TouchableOpacity, StyleSheet } from "react-native";
-import { Eye, EyeOff } from "../../styles/svgs";
-import { color } from "../../styles/colors";
-import { fonts } from "../../styles/fonts";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+} from "react-native";
+import { Eye, EyeOff } from "../styles/svgs";
+import { color } from "../styles/colors";
+import { fonts } from "../styles/fonts";
 
 const InputBox = ({
+  inputTitle,
   placeholder,
   maxLength,
   placeholderTextColor,
@@ -12,6 +19,7 @@ const InputBox = ({
   value,
   onChangeText,
   onEyePress,
+  error,
 }) => {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -24,32 +32,53 @@ const InputBox = ({
   };
 
   return (
-    <View style={[styles.inputBox, isFocused && styles.focusedBorder]}>
-      <TextInput
-        style={styles.input}
-        maxLength={maxLength}
-        placeholder={placeholder}
-        placeholderTextColor={placeholderTextColor}
-        secureTextEntry={secureTextEntry}
-        value={value}
-        onChangeText={onChangeText}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-      />
-      {onEyePress && (
-        <TouchableOpacity onPress={onEyePress}>
-          {secureTextEntry ? (
-            <Eye style={styles.eyeIcon} />
-          ) : (
-            <EyeOff style={styles.eyeIcon} />
-          )}
-        </TouchableOpacity>
+    <View style={styles.inputContainer}>
+      {inputTitle && (
+        <View style={styles.titleBox}>
+          <Text style={fonts.Body["Body 14 Medium"]}>{inputTitle}</Text>
+        </View>
+      )}
+      <View style={[styles.inputBox, isFocused && styles.focusedBorder]}>
+        <TextInput
+          style={styles.input}
+          maxLength={maxLength}
+          placeholder={placeholder}
+          placeholderTextColor={color.Gray[400]}
+          secureTextEntry={secureTextEntry}
+          value={value}
+          onChangeText={onChangeText}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+        />
+        {onEyePress && (
+          <TouchableOpacity onPress={onEyePress}>
+            {secureTextEntry ? (
+              <Eye style={styles.eyeIcon} />
+            ) : (
+              <EyeOff style={styles.eyeIcon} />
+            )}
+          </TouchableOpacity>
+        )}
+      </View>
+      {error && (
+        <View style={styles.errorText}>
+          <Text style={{ ...fonts.Body["Body 14 Medium"], color: color.Red }}>
+            {error}
+          </Text>
+        </View>
       )}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  inputContainer: {
+    gap: 4,
+  },
+  titleBox: {
+    width: "100%",
+    paddingHorizontal: 4,
+  },
   inputBox: {
     flexDirection: "row",
     width: "100%",
@@ -72,6 +101,11 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
     color: color.Gray[400],
+  },
+  errorText: {
+    width: "100%",
+    paddingHorizontal: 4,
+    height: 18,
   },
 });
 

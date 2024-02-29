@@ -9,7 +9,7 @@ export { default as Comment } from "../public/svgs/Comment.svg";
 export { default as Comment_Fill } from "../public/svgs/Comment_Fill.svg";
 export { default as Community } from "../public/svgs/Community.svg";
 export { default as Edit } from "../public/svgs/Edit.svg";
-export { default as Eye } from "../public/svgs/Eye.svg"
+export { default as Eye } from "../public/svgs/Eye.svg";
 export { default as EyeOff } from "../public/svgs/EyeOff.svg";
 export { default as Filter } from "../public/svgs/Filter.svg";
 export { default as Heart } from "../public/svgs/Heart.svg";
@@ -21,16 +21,19 @@ export { default as Search } from "../public/svgs/Search.svg";
 export { default as Star } from "../public/svgs/Star.svg";
 export { default as User } from "../public/svgs/User.svg";
 
-export { default as Alert } from "../public/svgs/main/Alert.svg"
-export { default as Arrow_Small_Right } from "../public/svgs/main/Arrow_Small_Right.svg"
-export { default as CommunityBoard } from "../public/svgs/main/CommunityBoard.svg"
-export { default as HomePage } from "../public/svgs/main/HomePage.svg"
-export { default as Info } from "../public/svgs/main/Info.svg"
-export { default as Map } from "../public/svgs/main/Map.svg"
-export { default as Review } from "../public/svgs/main/Review.svg"
-export { default as School } from "../public/svgs/main/School.svg"
-export { default as Dadeock } from "../public/svgs/main/Dadeock.svg"
-export { default as StyledStar } from "../public/svgs/main/Star.svg"
-export { default as PostProfile } from "../public/svgs/main/PostProfile.svg"
-export { default as Like } from "../public/svgs/main/Like.svg"
-export { default as Chat } from "../public/svgs/main/Chat.svg"
+export { default as Alert } from "../public/svgs/main/Alert.svg";
+export { default as Arrow_Small_Right } from "../public/svgs/main/Arrow_Small_Right.svg";
+export { default as CommunityBoard } from "../public/svgs/main/CommunityBoard.svg";
+export { default as HomePage } from "../public/svgs/main/HomePage.svg";
+export { default as Info } from "../public/svgs/main/Info.svg";
+export { default as Map } from "../public/svgs/main/Map.svg";
+export { default as Review } from "../public/svgs/main/Review.svg";
+export { default as School } from "../public/svgs/main/School.svg";
+export { default as Dadeock } from "../public/svgs/main/Dadeock.svg";
+export { default as StyledStar } from "../public/svgs/main/Star.svg";
+export { default as PostProfile } from "../public/svgs/main/PostProfile.svg";
+export { default as Like } from "../public/svgs/main/Like.svg";
+export { default as Chat } from "../public/svgs/main/Chat.svg";
+
+export { default as Logo } from "../public/assets/Logo.svg";
+export { default as LogoIcon } from "../public/assets/LogoIcon.svg";
