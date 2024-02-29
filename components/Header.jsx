@@ -5,16 +5,16 @@ import { Search, Bell, User } from "../styles/svgs";
 
 function Header() {
   return (
-      <Container>
-        <HeaderBox>
-          <Logo />
-          <InnerContainer>
-            <Search />
-            <Bell />
-            <User />
-          </InnerContainer>
-        </HeaderBox>
-      </Container>
+    <Container>
+      <HeaderBox>
+        <Logo />
+        <InnerContainer>
+          <Search />
+          <Bell />
+          <User />
+        </InnerContainer>
+      </HeaderBox>
+    </Container>
   );
 }
 
