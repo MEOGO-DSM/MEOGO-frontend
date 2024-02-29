@@ -47,6 +47,7 @@ export default function RecommendBox() {
 const Container = styled.View`
   width: 233px;
   height: 122px;
+  margin-right: 12px;
   padding: 16px;
   background-color: white;
   border-radius: 12px;
