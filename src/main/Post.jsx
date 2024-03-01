@@ -1,9 +1,9 @@
 import React from "react";
 import { styled } from "styled-components";
 import { Text, View } from "react-native";
-import { PostProfile, Like, Chat } from "../styles/svgs";
-import { color } from "../styles/colors.jsx";
-import { fonts } from "../styles/fonts.jsx";
+import { PostProfile, Like, Chat } from "../../styles/svgs";
+import { color } from "../../styles/colors.jsx";
+import { fonts } from "../../styles/fonts.jsx";
 
 export default function Post() {
   return (

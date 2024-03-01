@@ -11,9 +11,9 @@ import {
   Review,
   School,
   Spot,
-} from "../styles/svgs.jsx";
-import { color } from "../styles/colors.jsx";
-import { fonts } from "../styles/fonts.jsx";
+} from "../../styles/svgs.jsx";
+import { color } from "../../styles/colors.jsx";
+import { fonts } from "../../styles/fonts.jsx";
 
 export default function SchoolInfo() {
   const bar = [

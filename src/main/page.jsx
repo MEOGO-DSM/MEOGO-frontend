@@ -1,12 +1,12 @@
 import React from "react";
-import { styled } from "styled-components";
+import { styled } from "styled-components/native";
 import { SafeAreaView, ScrollView, Text, View, StyleSheet } from "react-native";
-import Header from "../components/Header.jsx";
-import Info from "../components/Info.jsx";
-import Recommend from "../components/Recommend.jsx";
-import Post from "../components/Post.jsx";
-import { color } from "../styles/colors.jsx";
-import { fonts } from "../styles/fonts.jsx";
+import Header from "../../components/Header.jsx";
+import Info from "./Info.jsx";
+import Recommend from "./Recommend.jsx";
+import Post from "./Post.jsx";
+import { color } from "../../styles/colors.jsx";
+import { fonts } from "../../styles/fonts.jsx";
 import { Dimensions } from "react-native";
 
 function Main() {
@@ -22,19 +22,24 @@ function Main() {
             <Info />
           </MySchoolBox>
           <Wrap>
-            <Text style={fonts.Subtitle["Subtitle 18 SemiBold"]}>
+            <Text
+              style={{
+                ...fonts.Subtitle["Subtitle 18 SemiBold"],
+                marginLeft: 16,
+              }}
+            >
               근처 대학교 추천
             </Text>
-            <WrapList></WrapList>
+            <WrapList horizontal={true} showsHorizontalScrollIndicator={false}>
+              <Recommend />
+              <Recommend />
+              <Recommend />
+            </WrapList>
           </Wrap>
         </MainContainer>
       </Container>
       {/*시발 */}
       {/* 
-              <Wrap>
-                <Text style={fonts.Subtitle["Subtitle 18 SemiBold"]}>
-                  근처 대학교 추천
-                </Text>
                 <View
                   style={{
                     width: Dimensions.get("window").width - 32,
@@ -45,8 +50,7 @@ function Main() {
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                   >
-                    <Recommend />
-                    <Recommend />
+                    
                   </ScrollView>
                 </View>
               </Wrap>
@@ -102,13 +106,15 @@ const MySchoolBox = styled.View`
 
 const Wrap = styled.View`
   margin-top: 36px;
-  padding: 16px 20px;
   gap: 16;
   background-color: red;
+  padding: 16px 0;
 `;
 
-const WrapList = styled.View`
-  gap: 12;
+const WrapList = styled.ScrollView`
+  padding: 0 16px;
+  flex-direction: row;
+  background-color: blue;
 `;
 
 const TitleFlex = styled.View`
@@ -124,20 +130,3 @@ const PostWrap = styled.View`
   align-items: center;
   gap: 8;
 `;
-
-const styles = StyleSheet.create({
-  topbarText: {
-    color: "white",
-  },
-  content: {
-    height: "auto", // Set the height of your content
-    padding: 20,
-    // Add other styles for your content as needed
-    backgroundColor: "red",
-  },
-  box: {
-    height: 200,
-    width: 200,
-    backgroundColor: "blue",
-  },
-});

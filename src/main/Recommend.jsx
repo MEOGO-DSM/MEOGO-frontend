@@ -1,9 +1,9 @@
 import React from "react";
 import { styled } from "styled-components";
 import { Text, View } from "react-native";
-import { Dadeock, BookMark, StyledStar } from "../styles/svgs.jsx";
-import { color } from "../styles/colors.jsx";
-import { fonts } from "../styles/fonts.jsx";
+import { Dadeock, BookMark, StyledStar } from "../../styles/svgs.jsx";
+import { color } from "../../styles/colors.jsx";
+import { fonts } from "../../styles/fonts.jsx";
 
 export default function RecommendBox() {
   return (
@@ -24,7 +24,7 @@ export default function RecommendBox() {
           대전 유성구 장동
         </Text>
         <ReviewWrap>
-          <StyledStar/>
+          <StyledStar />
           <Text
             style={{ ...fonts.Body["Body 16 Medium"], color: color.Gray[600] }}
           >
