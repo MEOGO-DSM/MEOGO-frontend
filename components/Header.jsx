@@ -2,43 +2,58 @@ import React from "react";
 import { styled } from "styled-components";
 import Logo from "../public/assets/Logo.svg";
 import { Search, Bell, User } from "../styles/svgs";
+import { color } from "../styles/colors";
 
 function Header() {
   return (
-    <Container>
-      <HeaderBox>
-        <Logo />
-        <InnerContainer>
+    <HeaderBox>
+      <Logo />
+      <InnerContainer>
+        <IconBox>
           <Search />
+        </IconBox>
+        <IconBox>
           <Bell />
-          <User />
-        </InnerContainer>
-      </HeaderBox>
-    </Container>
+        </IconBox>
+        <IconBox>
+          <Profile />
+        </IconBox>
+      </InnerContainer>
+    </HeaderBox>
   );
 }
 
 export default Header;
 
-const Container = styled.View`
-  width: 100%;
-  display: flex;
-  background-color: white;
-`;
-
 const HeaderBox = styled.View`
   width: 100%;
-  padding: 16px 16px;
+  padding: 32px 16px 16px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
 `;
 
 const InnerContainer = styled.View`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0px 15px;
-  gap: 20;
+  gap: 4;
+`;
+
+const IconBox = styled.View`
+  padding: 8px;
+`;
+
+const Profile = styled.View`
+  width: 28px;
+  height: 28px;
+  background-color: ${color.Gray[300]};
+  border-radius: 100px;
 `;

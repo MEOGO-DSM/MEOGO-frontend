@@ -7,9 +7,7 @@ function TopBar({ text }) {
   return (
     <View style={styles.container}>
       <Arrow_Left />
-      <View style={styles.voidBox} />
       <Text style={fonts.Subtitle["Subtitle 18 Medium"]}>{text}</Text>
-      <View style={styles.voidBox} />
       <View style={styles.voidIcon} />
     </View>
   );
@@ -23,6 +21,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width,
     paddingVertical: 16,
     paddingHorizontal: 20,
+    justifyContent: "space-between",
   },
   voidIcon: {
     width: 24,

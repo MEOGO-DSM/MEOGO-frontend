@@ -10,10 +10,10 @@ import {
   Map,
   Review,
   School,
+  Spot,
 } from "../styles/svgs.jsx";
 import { color } from "../styles/colors.jsx";
 import { fonts } from "../styles/fonts.jsx";
-
 
 export default function SchoolInfo() {
   const bar = [
@@ -25,93 +25,107 @@ export default function SchoolInfo() {
   ];
 
   return (
-    <View>
-      <Container>
-        <AlertBox>
-          <Alert />
-          <Text
-            style={{ ...fonts.Body["Body 14 Medium"], color: color.Gray[500] }}
-          >
-            자신의 학교에 리뷰를 남겨보세요
-          </Text>
-        </AlertBox>
+    <>
+      <AlertBox>
+        <Alert />
+        <Text
+          style={{ ...fonts.Body["Body 14 Medium"], color: color.Gray[500] }}
+        >
+          자신의 학교에 리뷰를 남겨보세요
+        </Text>
+      </AlertBox>
 
-        <InfoBox backgroundColor={color.Blue[600]}>
-          <School />
-          <SchoolDetails>
-            <Text
-              style={{
-                ...fonts.Subtitle["Subtitle 18 Bold"],
-                color: color.White,
-              }}
-            >
-              대덕소프트웨어마이스터고
-            </Text>
+      <InfoBox>
+        <School />
+        <SchoolDetails>
+          <Text
+            style={{
+              ...fonts.Subtitle["Subtitle 16 SemiBold"],
+              color: color.White,
+              width: "100%",
+              marginBottom: 2,
+            }}
+          >
+            대덕소프트웨어마이스터고
+          </Text>
+          <SchoolGroup>
             <Text
               style={{
                 ...fonts.Body["Body 14 Regular"],
                 color: color.Blue[100],
               }}
             >
-              특목고 - 대전광역시
+              특목고
             </Text>
-          </SchoolDetails>
-          <Arrow_Small_Right />
-        </InfoBox>
+            <Spot />
+            <Text
+              style={{
+                ...fonts.Body["Body 14 Regular"],
+                color: color.Blue[100],
+              }}
+            >
+              대전광역시
+            </Text>
+          </SchoolGroup>
+        </SchoolDetails>
+        <Arrow_Small_Right />
+      </InfoBox>
 
-        <Contents>
-          {bar.map((item, index) => (
-            <Icons key={index}>
-              <item.logo />
-              <Name>{item.name}</Name>
-            </Icons>
-          ))}
-        </Contents>
-      </Container>
-    </View>
+      <Contents>
+        {bar.map((item, index) => (
+          <Icons key={index}>
+            <item.logo />
+            <Name style={fonts.Body["Body 14 Regular"]}>{item.name}</Name>
+          </Icons>
+        ))}
+      </Contents>
+    </>
   );
 }
 
-const Container = styled.View``;
-
 const AlertBox = styled.View`
-  display: flex;
+  width: 100%;
   flex-direction: row;
-  margin: 8px 0px;
+  padding: 8px 4px;
+  align-items: center;
 `;
 
 const InfoBox = styled.View`
-  width: 357px;
-  height: 74px;
+  background-color: ${color.Blue[600]};
+  width: 100%;
   display: flex;
-  justify-content: space-around;
   align-items: center;
   flex-direction: row;
   gap: 12;
-  padding: 0px 16px;
-  border-radius: 8px;
+  padding: 16px;
+  border-radius: 12px;
+`;
+
+const SchoolGroup = styled.View`
+  flex-direction: row;
+  align-items: center;
 `;
 
 const SchoolDetails = styled.View`
-  width: 237px;
-  height: 42px;
+  flex: 1;
 `;
 
 const Contents = styled.View`
   display: flex;
-  width: 357px;
+  width: 100%;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  padding: 16px 6px 24px;
+  padding: 20px 6px 24px;
 `;
 
 const Icons = styled.View`
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
 `;
 
 const Name = styled.Text`
-  margin: 8px 0px;
+  margin-top: 8px;
 `;

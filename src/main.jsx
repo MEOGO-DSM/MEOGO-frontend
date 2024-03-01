@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
-import { SafeAreaView, ScrollView, Text, View } from "react-native";
+import { SafeAreaView, ScrollView, Text, View, StyleSheet } from "react-native";
 import Header from "../components/Header.jsx";
 import Info from "../components/Info.jsx";
 import Recommend from "../components/Recommend.jsx";
@@ -9,85 +9,106 @@ import { color } from "../styles/colors.jsx";
 import { fonts } from "../styles/fonts.jsx";
 import { Dimensions } from "react-native";
 
-export default function Main() {
+function Main() {
   return (
-    <SafeAreaView>
-      <ScrollView>
-        <Container backgroundColor={color.Gray[100]}>
-          <Header />
-
-          <Background>
+    <>
+      <Container>
+        <Header />
+        <MainContainer
+          contentContainerStyle={{ paddingTop: 88 }}
+          stickyHeaderIndices={[0]}
+        >
+          <MySchoolBox>
             <Info />
-          </Background>
-
+          </MySchoolBox>
           <Wrap>
             <Text style={fonts.Subtitle["Subtitle 18 SemiBold"]}>
               근처 대학교 추천
             </Text>
-            <View
-              style={{
-                width: Dimensions.get("window").width - 32,
-                height: 122,
-              }}
-            >
-              <ScrollView
-                horizontal={true}
-                showsHorizontalScrollIndicator={false}
-              >
-                <Recommend />
-                <Recommend />
-              </ScrollView>
-            </View>
+            <WrapList></WrapList>
           </Wrap>
+        </MainContainer>
+      </Container>
+      {/*시발 */}
+      {/* 
+              <Wrap>
+                <Text style={fonts.Subtitle["Subtitle 18 SemiBold"]}>
+                  근처 대학교 추천
+                </Text>
+                <View
+                  style={{
+                    width: Dimensions.get("window").width - 32,
+                    height: 122,
+                  }}
+                >
+                  <ScrollView
+                    horizontal={true}
+                    showsHorizontalScrollIndicator={false}
+                  >
+                    <Recommend />
+                    <Recommend />
+                  </ScrollView>
+                </View>
+              </Wrap>
 
-          <Wrap>
-            <TitleFlex>
-              <Text style={fonts.Subtitle["Subtitle 18 SemiBold"]}>
-                전체 인기글
-              </Text>
-              <Text
-                style={{
-                  ...fonts.Body["Body 14 Medium"],
-                  color: color.Blue[600],
-                }}
-              >
-                더보기
-              </Text>
-            </TitleFlex>
-            <PostWrap>
-              <Post />
-              <Post />
-              <Post />
-            </PostWrap>
-          </Wrap>
+              <Wrap>
+                <TitleFlex>
+                  <Text style={fonts.Subtitle["Subtitle 18 SemiBold"]}>
+                    전체 인기글
+                  </Text>
+                  <Text
+                    style={{
+                      ...fonts.Body["Body 14 Medium"],
+                      color: color.Blue[600],
+                    }}
+                  >
+                    더보기
+                  </Text>
+                </TitleFlex>
+                <PostWrap>
+                  <Post />
+                  <Post />
+                  <Post />
+                </PostWrap>
+              </Wrap>
+            </Container>
+          </ScrollView>
         </Container>
-      </ScrollView>
-    </SafeAreaView>
+      </SafeAreaView> */}
+    </>
   );
 }
 
+export default Main;
+
 const Container = styled.View`
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 16px;
+  background-color: ${color.Gray[100]};
 `;
 
-const Background = styled.View`
+const MainContainer = styled.ScrollView`
   width: 100%;
+`;
+
+const MySchoolBox = styled.View`
   height: auto;
+  width: 100%;
+  padding: 0 16px;
+  gap: 4px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: white;
-  border-radius: 0px 0px 30px 30px;
-  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px 24px 24px;
 `;
 
 const Wrap = styled.View`
-  margin: 24px 0px 0px;
+  margin-top: 36px;
+  padding: 16px 20px;
   gap: 16;
+  background-color: red;
+`;
+
+const WrapList = styled.View`
+  gap: 12;
 `;
 
 const TitleFlex = styled.View`
@@ -103,3 +124,20 @@ const PostWrap = styled.View`
   align-items: center;
   gap: 8;
 `;
+
+const styles = StyleSheet.create({
+  topbarText: {
+    color: "white",
+  },
+  content: {
+    height: "auto", // Set the height of your content
+    padding: 20,
+    // Add other styles for your content as needed
+    backgroundColor: "red",
+  },
+  box: {
+    height: 200,
+    width: 200,
+    backgroundColor: "blue",
+  },
+});

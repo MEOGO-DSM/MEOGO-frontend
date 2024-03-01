@@ -70,11 +70,11 @@ export const fonts = StyleSheet.create({
       lineHeight: 20,
       fontWeight: "600",
     },
-    "Subtitle 14px SemiBold": {
+    "Subtitle 14 SemiBold": {
       fontSize: 14,
       lineHeight: 18,
-      fontWeight: 600
-    }
+      fontWeight: "600",
+    },
   },
 
   Body: {
@@ -114,17 +114,17 @@ export const fonts = StyleSheet.create({
   },
 
   Action: {
-    Button14: {
+    "Button 14": {
       fontSize: 14,
       lineHeight: 18,
       fontWeight: "500",
     },
-    Button12: {
+    "Button 12": {
       fontSize: 12,
       lineHeight: 14,
       fontWeight: "500",
     },
-    Link14: {
+    "Link 14": {
       fontSize: 14,
       lineHeight: 18,
       fontWeight: "600",

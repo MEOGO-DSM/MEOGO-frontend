@@ -28,6 +28,7 @@ export { default as HomePage } from "../public/svgs/main/HomePage.svg";
 export { default as Info } from "../public/svgs/main/Info.svg";
 export { default as Map } from "../public/svgs/main/Map.svg";
 export { default as Review } from "../public/svgs/main/Review.svg";
+export { default as Spot } from "../public/svgs/main/Spot.svg";
 export { default as School } from "../public/svgs/main/School.svg";
 export { default as Dadeock } from "../public/svgs/main/Dadeock.svg";
 export { default as StyledStar } from "../public/svgs/main/Star.svg";
