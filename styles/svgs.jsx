@@ -30,11 +30,11 @@ export { default as Map } from "../public/svgs/main/Map.svg";
 export { default as Review } from "../public/svgs/main/Review.svg";
 export { default as Spot } from "../public/svgs/main/Spot.svg";
 export { default as School } from "../public/svgs/main/School.svg";
-export { default as Dadeock } from "../public/svgs/main/Dadeock.svg";
 export { default as StyledStar } from "../public/svgs/main/Star.svg";
 export { default as PostProfile } from "../public/svgs/main/PostProfile.svg";
 export { default as Like } from "../public/svgs/main/Like.svg";
 export { default as Chat } from "../public/svgs/main/Chat.svg";
+export { default as MoreArrow } from "../public/svgs/main/More_Arrow.svg";
 
 export { default as Logo } from "../public/assets/Logo.svg";
 export { default as LogoIcon } from "../public/assets/LogoIcon.svg";

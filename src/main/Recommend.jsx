@@ -1,75 +1,85 @@
-import React from "react";
-import { styled } from "styled-components";
-import { Text, View } from "react-native";
-import { Dadeock, BookMark, StyledStar } from "../../styles/svgs.jsx";
+import React, { useState } from "react";
+import { styled } from "styled-components/native";
+import { Text, View, TouchableOpacity } from "react-native";
+import { BookMark, StyledStar } from "../../styles/svgs.jsx";
 import { color } from "../../styles/colors.jsx";
 import { fonts } from "../../styles/fonts.jsx";
 
-export default function RecommendBox() {
+export default function Recommend() {
+  const [bookMark, setBookMark] = useState(false);
+
+  const toggleBookMark = () => {
+    setBookMark(!bookMark);
+  };
+
   return (
-    <View>
-      <Container>
-        <InfoFlex>
-          <Info>
-            <Dadeock />
-            <Text style={fonts.Subtitle["Subtitle 16 SemiBold"]}>
-              대덕대학교
-            </Text>
-          </Info>
-          <BookMark />
-        </InfoFlex>
+    <Container>
+      <SchoolInfoBox>
+        <TitleBox>
+          <SchoolLogo />
+          <Text style={fonts.Subtitle["Subtitle 16 SemiBold"]}>충남대학교</Text>
+        </TitleBox>
         <Text
           style={{ ...fonts.Body["Body 14 Regular"], color: color.Gray[500] }}
         >
-          대전 유성구 장동
+          대전 유성구 궁동
         </Text>
-        <ReviewWrap>
+        <ScopeBox>
           <StyledStar />
           <Text
             style={{ ...fonts.Body["Body 16 Medium"], color: color.Gray[600] }}
           >
-            2.5
+            4.0
           </Text>
           <Text
             style={{
-              ...fonts.Captions["Captions 14 Regular"],
+              ...fonts.Captions["Captions 12 Medium"],
               color: color.Gray[400],
             }}
           >
             (274)
           </Text>
-        </ReviewWrap>
-      </Container>
-    </View>
+        </ScopeBox>
+      </SchoolInfoBox>
+      <TouchableOpacity onPress={toggleBookMark}>
+        <BookMark fill={bookMark ? color.Blue[500] : "none"} />
+      </TouchableOpacity>
+    </Container>
   );
 }
 
 const Container = styled.View`
-  width: 233px;
-  height: 122px;
   margin-right: 12px;
-  padding: 16px;
-  background-color: white;
+  width: 230px;
+  padding: 20px;
+  background-color: ${color.White};
   border-radius: 12px;
-  gap: 6;
+  flex-direction: row;
 `;
 
-const InfoFlex = styled.View`
+const SchoolInfoBox = styled.View`
+  flex: 1;
+  gap: 8px;
+`;
+
+const TitleBox = styled.View`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
 `;
 
-const Info = styled.View`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 6;
+const SchoolLogo = styled.View`
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  margin-right: 8px;
+  border-width: 1px;
+  border-color: ${color.Gray[200]};
 `;
 
-const ReviewWrap = styled.View`
+const ScopeBox = styled.View`
   display: flex;
+  gap: 6px;
+  align-items: center;
   flex-direction: row;
-  gap: 4;
 `;

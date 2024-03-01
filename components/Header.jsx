@@ -27,7 +27,7 @@ export default Header;
 
 const HeaderBox = styled.View`
   width: 100%;
-  padding: 32px 16px 16px;
+  padding: 16px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

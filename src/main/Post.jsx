@@ -7,81 +7,76 @@ import { fonts } from "../../styles/fonts.jsx";
 
 export default function Post() {
   return (
-    <View>
-      <Container>
-        <Info>
-          <UserInfo>
-            <PostProfile />
-            <Text style={fonts.Captions["Captions 12 Medium"]}>익명</Text>
-          </UserInfo>
-          <Text
-            style={{
-              ...fonts.Captions["Captions 12 Medium"],
-              color: color.Gray[300],
-            }}
-          >
-            02/19 23:00
-          </Text>
-        </Info>
+    <Container>
+      <InfoBox>
+        <UserInfo>
+          <PostProfile />
+          <Text style={fonts.Body["Body 14 Medium"]}>익명</Text>
+        </UserInfo>
+        <Text
+          style={{
+            ...fonts.Captions["Captions 12 Medium"],
+            color: color.Gray[300],
+          }}
+        >
+          02/19 23:00
+        </Text>
+      </InfoBox>
 
-        <Contents>
-          <Text style={fonts.Subtitle["Subtitle 14px SemiBold"]}>
-            아진짜대마고
-          </Text>
-          <Text>폭발시켜버릴거다</Text>
-        </Contents>
+      <Contents>
+        <Text style={fonts.Subtitle["Subtitle 14 SemiBold"]}>아진짜대마고</Text>
+        <Text style={fonts.Body["Body 14 SemiBold"]}>폭발시켜버릴거다</Text>
+      </Contents>
 
-        <Footer>
-          <Text
-            style={{
-              ...fonts.Captions["Captions 12 Medium"],
-              color: color.Gray[400],
-            }}
-          >
-            대마고 게시판
-          </Text>
-          <CommentLikeBox>
-            <IconFlex>
-              <Like />
-              <Text
-                style={{
-                  ...fonts.Captions["Captions 12 Medium"],
-                  color: color.Gray[400],
-                }}
-              >
-                21
-              </Text>
-            </IconFlex>
-            <IconFlex>
-              <Chat />
-              <Text
-                style={{
-                  ...fonts.Captions["Captions 12 Medium"],
-                  color: color.Gray[400],
-                }}
-              >
-                21
-              </Text>
-            </IconFlex>
-          </CommentLikeBox>
-        </Footer>
-      </Container>
-    </View>
+      <Footer>
+        <Text
+          style={{
+            ...fonts.Captions["Captions 12 Medium"],
+            color: color.Gray[400],
+          }}
+        >
+          대마고 게시판
+        </Text>
+        <CommentLikeBox>
+          <IconFlex>
+            <Like />
+            <Text
+              style={{
+                ...fonts.Captions["Captions 12 Medium"],
+                color: color.Gray[400],
+              }}
+            >
+              21
+            </Text>
+          </IconFlex>
+          <IconFlex>
+            <Chat />
+            <Text
+              style={{
+                ...fonts.Captions["Captions 12 Medium"],
+                color: color.Gray[400],
+              }}
+            >
+              21
+            </Text>
+          </IconFlex>
+        </CommentLikeBox>
+      </Footer>
+    </Container>
   );
 }
 
 const Container = styled.View`
-  width: 357px;
-  height: 112px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   background-color: white;
   border-radius: 8px;
-  padding: 12px;
+  padding: 16px;
   gap: 8;
 `;
 
-const Info = styled.View`
+const InfoBox = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -90,12 +85,13 @@ const Info = styled.View`
 const UserInfo = styled.View`
   display: flex;
   flex-direction: row;
-  gap: 6;
+  gap: 8px;
+  align-items: center;
 `;
 
 const Contents = styled.View`
   display: flex;
-  gap: 4;
+  gap: 2px;
 `;
 
 const Footer = styled.View`
@@ -107,11 +103,12 @@ const Footer = styled.View`
 const CommentLikeBox = styled.View`
   display: flex;
   flex-direction: row;
-  gap: 12;
+  gap: 12px;
 `;
 
 const IconFlex = styled.View`
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 4px;
 `;
