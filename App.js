@@ -3,6 +3,7 @@ import { useFonts } from "expo-font";
 import Signup from "./src/signup/page";
 import Login from "./src/login/page";
 import Main from "./src/main/page";
+import SchoolInfo from "./src/schoolInfo/page";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -14,7 +15,7 @@ export default function App() {
   if (!fontsLoaded) return <StatusBar />;
   return (
     <View style={styles.container}>
-      <Main />
+      <SchoolInfo />
     </View>
   );
 }

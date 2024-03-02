@@ -10,7 +10,7 @@ export { default as Comment_Fill } from "../public/svgs/Comment_Fill.svg";
 export { default as Community } from "../public/svgs/Community.svg";
 export { default as Edit } from "../public/svgs/Edit.svg";
 export { default as Eye } from "../public/svgs/Eye.svg";
-export { default as EyeOff } from "../public/svgs/EyeOff.svg";
+export { default as EyeOff } from "../public/svgs/Eyeoff.svg";
 export { default as Filter } from "../public/svgs/Filter.svg";
 export { default as Heart } from "../public/svgs/Heart.svg";
 export { default as Home } from "../public/svgs/Home.svg";
@@ -35,6 +35,8 @@ export { default as PostProfile } from "../public/svgs/main/PostProfile.svg";
 export { default as Like } from "../public/svgs/main/Like.svg";
 export { default as Chat } from "../public/svgs/main/Chat.svg";
 export { default as MoreArrow } from "../public/svgs/main/More_Arrow.svg";
+export { default as SchoolImg } from "../public/svgs/main/SchoolImg.svg"
+export { default as QIcon } from "../public/svgs/main/QIcon.svg"
 
 export { default as Logo } from "../public/assets/Logo.svg";
 export { default as LogoIcon } from "../public/assets/LogoIcon.svg";
