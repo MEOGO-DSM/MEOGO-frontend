@@ -12,59 +12,8 @@ import { color } from "./styles/colors";
 import { fonts } from "./styles/fonts";
 import * as svgs from "./styles/svgs";
 
-const SvgList = [
-  <svgs.Add />,
-  <svgs.Alert />,
-  <svgs.Arrow_Down />,
-  <svgs.Arrow_Left />,
-  <svgs.Arrow_Right />,
-  <svgs.Arrow_Small_Right />,
-  <svgs.Arrow_Up />,
-  <svgs.Bell />,
-  <svgs.BookMark />,
-  <svgs.Chat />,
-  <svgs.Close />,
-  <svgs.Comment />,
-  <svgs.Community />,
-  <svgs.CommunityBoard />,
-  <svgs.Edit />,
-  <svgs.Eye />,
-  <svgs.EyeOff />,
-  <svgs.Filter />,
-  <svgs.Heart />,
-  <svgs.Home />,
-  <svgs.HomePage />,
-  <svgs.Info />,
-  <svgs.Like />,
-  <svgs.Location />,
-  <svgs.Logo />,
-  <svgs.LogoIcon />,
-  <svgs.Map />,
-  <svgs.Menu />,
-  <svgs.More />,
-  <svgs.MoreArrow />,
-  <svgs.PostProfile />,
-  <svgs.Review />,
-  <svgs.School />,
-  <svgs.Search />,
-  <svgs.Spot />,
-  <svgs.Star />,
-  <svgs.StyledStar />,
-  <svgs.User />,
-];
-
 function WhatIsSvg() {
   const [modalVisible, setModalVisible] = useState(false);
-  const svgName = SvgList.map((svgElement) => {
-    if (
-      typeof svgElement === "object" &&
-      svgElement.type &&
-      svgElement.type.name
-    ) {
-      return svgElement.type.name;
-    }
-    return null;
-  });
   const renderSvgButtons = () => {
     return Object.keys(svgs).map((svgName) => {
       const SvgComponent = svgs[svgName];
