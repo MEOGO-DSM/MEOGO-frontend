@@ -6,6 +6,7 @@ import { color } from "../../styles/colors.jsx";
 import { fonts } from "../../styles/fonts.jsx";
 import QnA from "../schoolInfo/QnA";
 import TopBar from "../../components/TopBar";
+import { data } from "./index";
 
 export default function SchoolInfo() {
   const [bookMark, setBookMark] = useState(false);
@@ -16,7 +17,7 @@ export default function SchoolInfo() {
 
   return (
     <Container>
-    <TopBar text="대덕소프트웨어마이스터고"/>
+      <TopBar text="대덕소프트웨어마이스터고" />
       <Info>
         <SchoolImg styles={{ width: 357, height: 240, borderRadius: 16 }} />
         <Title>
@@ -39,8 +40,12 @@ export default function SchoolInfo() {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.scrollBox}
       >
-        <QnA />
-        <QnA />
+        {data.map((value, index) => (
+          <QnA
+            value={value}
+            selected={index % 2 === 0 ? "Amber" : "Blue"}
+          />
+        ))}
       </Wrap>
     </Container>
   );
