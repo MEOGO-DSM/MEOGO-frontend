@@ -7,18 +7,16 @@ import Recommend from "./Recommend.jsx";
 import Post from "./Post.jsx";
 import { color } from "../../styles/colors.jsx";
 import { fonts } from "../../styles/fonts.jsx";
-import { Dimensions } from "react-native";
 import { MoreArrow } from "../../styles/svgs.jsx";
 
 function Main() {
   return (
     <Container>
-      <Header />
       <MainContainer
-        contentContainerStyle={{ paddingTop: 72 }}
         showsVerticalScrollIndicator={false}
         stickyHeaderIndices={[0]}
       >
+        <Header />
         <MySchoolBox>
           <Info />
         </MySchoolBox>
@@ -53,7 +51,7 @@ function Main() {
             <More>
               <Text
                 style={{
-                  ...fonts.Action["Link 14"],
+                  ...fonts.Action["Link 12"],
                   color: color.Gray[500],
                 }}
               >
@@ -68,6 +66,7 @@ function Main() {
             <Post />
           </WrapList2>
         </Wrap>
+        <Empty />
       </MainContainer>
     </Container>
   );
@@ -122,6 +121,14 @@ const WrapList2 = styled.View`
   width: "100%";
   gap: 12px;
   padding: 0 20px;
+`;
+
+const Empty = styled.View`
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const styles = StyleSheet.create({

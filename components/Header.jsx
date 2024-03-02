@@ -33,11 +33,6 @@ const HeaderBox = styled.View`
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  right: 0;
 `;
 
 const InnerContainer = styled.View`
