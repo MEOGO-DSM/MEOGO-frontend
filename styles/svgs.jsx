@@ -35,6 +35,9 @@ export { default as PostProfile } from "../public/svgs/main/PostProfile.svg";
 export { default as Like } from "../public/svgs/main/Like.svg";
 export { default as Chat } from "../public/svgs/main/Chat.svg";
 export { default as MoreArrow } from "../public/svgs/main/More_Arrow.svg";
+export { default as SchoolImg } from "../public/svgs/main/SchoolImg.svg";
+export { default as QIcon_Amber } from "../public/svgs/main/QIcon_Amber.svg";
+export { default as QIcon_Blue } from "../public/svgs/main/QIcon_Blue.svg";
 
 export { default as Logo } from "../public/assets/Logo.svg";
 export { default as LogoIcon } from "../public/assets/LogoIcon.svg";
