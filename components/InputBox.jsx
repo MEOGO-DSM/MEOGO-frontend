@@ -60,13 +60,13 @@ const InputBox = ({
           </TouchableOpacity>
         )}
       </View>
-      {error && (
-        <View style={styles.errorText}>
+      <View style={styles.errorText}>
+        {error && (
           <Text style={{ ...fonts.Body["Body 14 Medium"], color: color.Red }}>
             {error}
           </Text>
-        </View>
-      )}
+        )}
+      </View>
     </View>
   );
 };

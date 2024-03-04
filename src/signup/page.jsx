@@ -23,7 +23,7 @@ function Signup() {
     <View style={styles.container}>
       <TopBar text="회원가입" />
       <View style={styles.signupBox}>
-        <InputBox inputTitle="이름" placeholder="이름" maxLength={4} />
+        <InputBox inputTitle="이름" placeholder="이름" maxLength={5} />
         <InputBox
           inputTitle="아이디"
           placeholder="최소 5자, 최대 15자"
@@ -41,7 +41,7 @@ function Signup() {
         <InputBox
           inputTitle="비밀번호 확인"
           placeholder="비밀번호"
-          maxLength={4}
+          maxLength={20}
           secureTextEntry={!passwordVisible2}
           value={password2}
           onChangeText={(text) => setPassword2(text)}
