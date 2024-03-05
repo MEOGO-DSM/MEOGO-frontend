@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import WhatIsSvg from "./WhatIsSvg";
 import SearchPage from "./src/search/page";
 import SchoolInfo from "./src/schoolInfo/page";
+import SchoolReview from "./src/schoolReview/page";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -18,7 +19,7 @@ export default function App() {
   if (!fontsLoaded) return <StatusBar />;
   return (
     <View style={styles.container}>
-      <SearchPage />
+      <SchoolReview />
     </View>
   );
 }
