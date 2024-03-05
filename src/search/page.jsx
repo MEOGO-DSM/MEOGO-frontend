@@ -1,7 +1,16 @@
-import React from "react";
-import { StyleSheet, View, Text, Dimensions, Pressable } from "react-native";
+import { useState } from "react";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Dimensions,
+  Pressable,
+  TextInput,
+} from "react-native";
 import { color } from "../../styles/colors";
 import { fonts } from "../../styles/fonts";
+import { Search } from "../../styles/svgs";
+import Dropdown from "./Dropdown";
 
 function SearchPage() {
   return (
@@ -26,7 +35,35 @@ function SearchPage() {
               </Text>
             </Pressable>
           </View>
-          <View style={styles.searchBox}></View>
+          <View style={styles.searchBox}>
+            <Search />
+            <TextInput
+              style={fonts.Body["Body 16 Regular"]}
+              placeholderTextColor={color.Gray[400]}
+              placeholder="학교 이름을 입력해주세요"
+            />
+          </View>
+          <View style={styles.detailBox}>
+            <Text style={{ ...fonts.Action["Link 14"], marginLeft: 4 }}>
+              태그 검색
+            </Text>
+            <View style={styles.tagBox}>
+              <Dropdown data={regionData} title={regionData} />
+              <Dropdown data={regionData} title={regionData} />
+              <Dropdown data={regionData} title={regionData} />
+            </View>
+          </View>
+          <View style={styles.detailBox}>
+            <View style={styles.searchHistory}></View>
+            <Text style={{ ...fonts.Action["Link 14"], marginLeft: 4 }}>
+              검색 기록
+            </Text>
+            <View style={styles.tagBox}>
+              <Dropdown data={regionData} title={regionData} />
+              <Dropdown data={regionData} title={regionData} />
+              <Dropdown data={regionData} title={regionData} />
+            </View>
+          </View>
         </View>
       </View>
     </View>
@@ -37,17 +74,16 @@ export default SearchPage;
 
 const styles = StyleSheet.create({
   container: {
-    width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height,
-    backgroundColor: (0, 0, 0, 0.2),
-    position: "absolute",
-    top: 0,
+    flex: 1,
+    backgroundColor: color.Black,
     zIndex: 4,
+    paddingTop: 100,
   },
   searchContainer: {
     position: "absolute",
     bottom: 0,
-    width: Dimensions.get("window").width,
+    height: "100%",
+    width: "100%",
     paddingHorizontal: 20,
     paddingVertical: 10,
     backgroundColor: color.White,
@@ -72,11 +108,30 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    paddingVertical: 10,
   },
   searchBox: {
     width: "100%",
     gap: 8,
-    paddingHorizontal: 14,
+    paddingHorizontal: 16,
     paddingVertical: 8,
+    backgroundColor: color.Gray[100],
+    borderRadius: 1000,
+    alignItems: "center",
+    flexDirection: "row",
+  },
+  detailBox: {
+    width: "100%",
+    padding: 8,
+    gap: 8,
+  },
+  searchHistoryBox: {
+    paddingHorizontal: 4,
+    justifyContent: "space-between",
+  },
+  tagBox: {
+    width: "100%",
+    flexDirection: "row",
+    gap: 10,
   },
 });

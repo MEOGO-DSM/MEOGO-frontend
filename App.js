@@ -19,6 +19,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <SearchPage />
+      <NavBar />
     </View>
   );
 }
