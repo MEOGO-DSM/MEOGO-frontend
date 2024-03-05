@@ -19,7 +19,12 @@ export default function App() {
   if (!fontsLoaded) return <StatusBar />;
   return (
     <View style={styles.container}>
+<<<<<<< HEAD
       <SchoolReview />
+=======
+      <SearchPage />
+      <NavBar />
+>>>>>>> 358badd17c245cf03204a159748e854c76b8b1a6
     </View>
   );
 }

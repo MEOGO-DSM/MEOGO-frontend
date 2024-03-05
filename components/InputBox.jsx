@@ -14,7 +14,6 @@ const InputBox = ({
   inputTitle,
   placeholder,
   maxLength,
-  placeholderTextColor,
   secureTextEntry,
   value,
   onChangeText,
