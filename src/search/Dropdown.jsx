@@ -3,7 +3,6 @@ import {
   View,
   Text,
   TouchableOpacity,
-  Image,
   FlatList,
   StyleSheet,
 } from "react-native";
@@ -11,7 +10,7 @@ import { Arrow_Down } from "../../styles/svgs";
 import { color } from "../../styles/colors";
 import { fonts } from "../../styles/fonts";
 
-function Dropdown({ data, title }) {
+function Dropdown({ data }) {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [selectedValue, setSelectedValue] = useState(null);
 
@@ -20,31 +19,42 @@ function Dropdown({ data, title }) {
   };
 
   const handleItemPress = (item) => {
-    setSelectedValue(item.label);
+    setSelectedValue(item);
     setDropdownVisible(false);
+  };
+
+  const renderItem = ({ item }) => {
+    return (
+      <TouchableOpacity onPress={() => handleItemPress(item)}>
+        <View style={styles.dropDownList}>
+          <Text
+            style={{
+              ...fonts.Body["Body 14 Regular"],
+              color: selectedValue === item ? color.Blue[600] : color.Black,
+            }}
+          >
+            {item}
+          </Text>
+        </View>
+      </TouchableOpacity>
+    );
   };
 
   return (
     <>
       <TouchableOpacity onPress={toggleDropdown} style={styles.background}>
         <View style={styles.dropDownBox}>
-          <Text>{selectedValue || data[0].label}</Text>
+          <Text style={fonts.Body["Body 14 Regular"]}>
+            {selectedValue || data[0]}
+          </Text>
           <Arrow_Down />
         </View>
         {isDropdownVisible && (
           <View style={styles.dropDownListBox}>
             <FlatList
               data={data}
-              keyExtractor={(item) => item.value.toString()}
-              renderItem={({ item }) => (
-                <TouchableOpacity onPress={() => handleItemPress(item)}>
-                  <View style={styles.dropDownList}>
-                    <Text style={{ ...fonts.Body["Body 14 Regular"] }}>
-                      {item.label}
-                    </Text>
-                  </View>
-                </TouchableOpacity>
-              )}
+              keyExtractor={(item) => item}
+              renderItem={renderItem}
             />
           </View>
         )}

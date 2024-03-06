@@ -17,6 +17,7 @@ export { default as Home } from "../public/svgs/Home.svg";
 export { default as Location } from "../public/svgs/Location.svg";
 export { default as Menu } from "../public/svgs/Menu.svg";
 export { default as More } from "../public/svgs/More.svg";
+export { default as Reset } from "../public/svgs/Reset.svg";
 export { default as Search } from "../public/svgs/Search.svg";
 export { default as Star } from "../public/svgs/Star.svg";
 export { default as User } from "../public/svgs/User.svg";

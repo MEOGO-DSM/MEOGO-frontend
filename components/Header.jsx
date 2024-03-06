@@ -1,16 +1,25 @@
-import React from "react";
+import { useState } from "react";
 import { styled } from "styled-components";
 import Logo from "../public/assets/Logo.svg";
-import { Search, Bell, User } from "../styles/svgs";
+import { Search, Bell } from "../styles/svgs";
 import { color } from "../styles/colors";
+import BottomSheet from "../src/search/BottomSheet";
 
 function Header() {
+  const [modalVisible, setModalVisible] = useState(false);
+  const pressButton = () => {
+    setModalVisible(true);
+  };
   return (
     <HeaderBox>
       <Logo />
       <InnerContainer>
         <IconBox>
-          <Search />
+          <Search onPress={pressButton} />
+          <BottomSheet
+            modalVisible={modalVisible}
+            setModalVisible={setModalVisible}
+          />
         </IconBox>
         <IconBox>
           <Bell />
