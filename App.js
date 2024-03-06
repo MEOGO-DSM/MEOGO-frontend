@@ -6,6 +6,7 @@ import Main from "./src/main/page";
 import NavBar from "./components/NavBar";
 import WhatIsSvg from "./WhatIsSvg";
 import SchoolInfo from "./src/schoolInfo/page";
+import SchoolReview from "./src/schoolReview/page";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -18,7 +19,6 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Main />
-      <NavBar />
     </View>
   );
 }
