@@ -13,6 +13,7 @@ import { fonts } from "../styles/fonts";
 const InputBox = ({
   inputTitle,
   placeholder,
+  minLength,
   maxLength,
   secureTextEntry,
   value,
@@ -40,6 +41,7 @@ const InputBox = ({
       <View style={[styles.inputBox, isFocused && styles.focusedBorder]}>
         <TextInput
           style={styles.input}
+          minLength={minLength}
           maxLength={maxLength}
           placeholder={placeholder}
           placeholderTextColor={color.Gray[400]}
@@ -59,13 +61,13 @@ const InputBox = ({
           </TouchableOpacity>
         )}
       </View>
-      <View style={styles.errorText}>
-        {error && (
+      {error && ( 
+        <View style={styles.errorText}>
           <Text style={{ ...fonts.Body["Body 14 Medium"], color: color.Red }}>
             {error}
           </Text>
-        )}
-      </View>
+        </View>
+      )}
     </View>
   );
 };

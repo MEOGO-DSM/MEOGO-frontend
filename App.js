@@ -7,8 +7,14 @@ import NavBar from "./components/NavBar";
 import WhatIsSvg from "./WhatIsSvg";
 import SchoolInfo from "./src/schoolInfo/page";
 import SchoolReview from "./src/schoolReview/page";
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
 
 export default function App() {
+
+  const Stack = createStackNavigator();
+
   const [fontsLoaded] = useFonts({
     "Pretendard-Bold": require("./public/fonts/Pretendard-Bold.otf"),
     "Pretendard-Medium": require("./public/fonts/Pretendard-Medium.otf"),
@@ -17,9 +23,12 @@ export default function App() {
   });
   if (!fontsLoaded) return <StatusBar />;
   return (
-    <View style={styles.container}>
-      <Main />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
+        <Stack.Screen name="Signup" component={Signup} options={{ headerShown: false }}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
