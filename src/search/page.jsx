@@ -1,5 +1,12 @@
-import React from "react";
-import { StyleSheet, View, Text, ScrollView } from "react-native";
+
+import React, { useState, useEffect } from "react";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Pressable,
+  TextInput,
+} from "react-native";
 import { color } from "../../styles/colors";
 
 function SearchResult() {
