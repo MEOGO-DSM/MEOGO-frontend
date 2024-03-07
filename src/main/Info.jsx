@@ -96,7 +96,7 @@ const InfoBox = styled.View`
   display: flex;
   align-items: center;
   flex-direction: row;
-  gap: 12;
+  gap: 12px;
   padding: 16px;
   border-radius: 12px;
 `;

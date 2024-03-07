@@ -1,16 +1,16 @@
 import React from "react";
 import { styled } from "styled-components";
 import { Text, View } from "react-native";
-import { PostProfile, Like, Chat } from "../../styles/svgs";
+import { ProfilePost, Like, Chat } from "../../styles/svgs";
 import { color } from "../../styles/colors.jsx";
 import { fonts } from "../../styles/fonts.jsx";
 
-export default function Post() {
+function Post() {
   return (
     <Container>
       <InfoBox>
         <UserInfo>
-          <PostProfile />
+          <ProfilePost />
           <Text style={fonts.Body["Body 14 Medium"]}>익명</Text>
         </UserInfo>
         <Text
@@ -66,6 +66,8 @@ export default function Post() {
   );
 }
 
+export default Post;
+
 const Container = styled.View`
   width: 100%;
   display: flex;
@@ -73,7 +75,7 @@ const Container = styled.View`
   background-color: white;
   border-radius: 8px;
   padding: 16px;
-  gap: 8;
+  gap: 8px;
 `;
 
 const InfoBox = styled.View`

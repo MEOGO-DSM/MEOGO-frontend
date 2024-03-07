@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   View,
   StyleSheet,
@@ -9,16 +9,19 @@ import {
   Dimensions,
   PanResponder,
   Pressable,
-  TextInput,
 } from "react-native";
 import { color } from "../../styles/colors";
 import { fonts } from "../../styles/fonts";
 import { Reset, Search } from "../../styles/svgs";
 import Dropdown from "./Dropdown";
 import SearchHistoryTag from "./SearchHistoryTag";
-import { highschoolCategory, region } from "./Data";
+import { highSchoolCategory, region } from "./Data";
+import SearchInput from "./SearchInput";
 
 function BottomSheet(props) {
+  const [selectedRegion, setSelectedRegion] = useState(null);
+  const [selectedRegions, setSelectedRegions] = useState([]);
+
   const { modalVisible, setModalVisible } = props;
   const screenHeight = Dimensions.get("screen").height;
   const panY = useRef(new Animated.Value(screenHeight)).current;
@@ -68,6 +71,15 @@ function BottomSheet(props) {
     });
   };
 
+  //학교 분류 선택
+  const [selectSchool, setSelectSchool] = useState("고등학교");
+
+  const selectStyle = (school) => {
+    setSelectSchool(school);
+  };
+
+  const grade = ["중학교", "고등학교", "대학교"];
+
   return (
     <Modal
       visible={modalVisible}
@@ -89,40 +101,35 @@ function BottomSheet(props) {
           <View style={styles.searchContainer}>
             <View style={styles.bar} />
             <View style={styles.box}>
-              <View style={styles.SchoolClassificationBox}>
-                <Pressable style={styles.SchoolClassification}>
-                  <Text style={{ ...fonts.Subtitle["Subtitle 18 SemiBold"] }}>
-                    중학교
-                  </Text>
-                </Pressable>
-                <Pressable style={styles.SchoolClassification}>
-                  <Text style={{ ...fonts.Subtitle["Subtitle 18 SemiBold"] }}>
-                    고등학교
-                  </Text>
-                </Pressable>
-                <Pressable style={styles.SchoolClassification}>
-                  <Text style={{ ...fonts.Subtitle["Subtitle 18 SemiBold"] }}>
-                    대학교
-                  </Text>
-                </Pressable>
+              <View style={styles.classificationBox}>
+                {grade.map((i, j) => (
+                  <Pressable
+                    key={j}
+                    style={
+                      selectSchool === i
+                        ? styles.selectClassification
+                        : styles.classification
+                    }
+                    onPress={() => selectStyle(i)}
+                  >
+                    <Text
+                      style={{
+                        ...fonts.Subtitle["Subtitle 18 SemiBold"],
+                        color:
+                          selectSchool === i ? color.Blue[600] : color.Black,
+                      }}
+                    >
+                      {i}
+                    </Text>
+                  </Pressable>
+                ))}
               </View>
-              <View style={styles.searchBox}>
-                <Search />
-                <TextInput
-                  style={fonts.Body["Body 16 Regular"]}
-                  placeholderTextColor={color.Gray[400]}
-                  placeholder="학교 이름을 입력해주세요"
-                />
-              </View>
+              <SearchInput />
               <View style={styles.detailBox}>
                 <Text style={{ ...fonts.Action["Link 14"], marginLeft: 4 }}>
                   태그 검색
                 </Text>
-                <View style={styles.tagBox}>
-                  <Dropdown data={region} />
-                  <Dropdown data={highschoolCategory} />
-                  <Dropdown data={highschoolCategory} />
-                </View>
+                <View style={styles.tagBox}>{/* <Dropdown /> */}</View>
               </View>
               <View style={styles.detailBox}>
                 <View style={styles.searchHistory}>
@@ -185,12 +192,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   bottomSheetContainer: {
-    height: 500,
+    height: 600,
+    maxHeight: Dimensions.get("window").height,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "white",
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
+    borderRadius: 32,
   },
   searchContainer: {
     position: "absolute",
@@ -201,6 +207,9 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     backgroundColor: color.White,
     alignItems: "center",
+
+    borderTopLeftRadius: 32,
+    borderTopRightRadius: 10,
   },
   bar: {
     width: 48,
@@ -213,25 +222,27 @@ const styles = StyleSheet.create({
     gap: 16,
     paddingVertical: 16,
   },
-  SchoolClassificationBox: {
+  classificationBox: {
     flexDirection: "row",
     width: "100%",
   },
-  SchoolClassification: {
+  classification: {
     flex: 1,
+    width: "100%",
     alignItems: "center",
     justifyContent: "center",
     paddingVertical: 10,
+    borderBottomWidth: 3,
+    borderColor: "transparent",
   },
-  searchBox: {
+  selectClassification: {
+    flex: 1,
     width: "100%",
-    gap: 8,
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    backgroundColor: color.Gray[100],
-    borderRadius: 1000,
     alignItems: "center",
-    flexDirection: "row",
+    justifyContent: "center",
+    paddingVertical: 10,
+    borderBottomWidth: 3,
+    borderColor: color.Blue[600],
   },
   detailBox: {
     width: "100%",

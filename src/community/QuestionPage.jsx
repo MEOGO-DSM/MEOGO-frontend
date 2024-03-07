@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components/native";
 
-function CommunityPage() {
+function QuestionPage() {
   return <></>;
 }
 
-export default CommunityPage;
+export default QuestionPage;

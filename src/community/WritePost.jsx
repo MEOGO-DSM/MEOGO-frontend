@@ -21,7 +21,12 @@ function WritePost() {
       </View>
       <View style={styles.main}>
         <InputBox inputTitle="제목" placeholder="최대 30자" maxLength={30} />
-        <InputBox inputTitle="내용" placeholder="최대 300자" maxLength={300} />
+        <InputBox
+          inputTitle="내용"
+          placeholder={`최대 300자\n\n\n\n\n\n\n\n`}
+          maxLength={300}
+          multiline={true}
+        />
         <View style={styles.schoolNameVisible}>
           <Text style={fonts.Body["Body 16 Medium"]}>내 학교명 공개</Text>
           <Switch
@@ -35,6 +40,7 @@ function WritePost() {
     </View>
   );
 }
+export default WritePost;
 
 const styles = StyleSheet.create({
   container: {
@@ -46,6 +52,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 20,
     paddingVertical: 16,
+    flexDirection: "row",
   },
   button: {
     paddingHorizontal: 14,

@@ -19,6 +19,7 @@ const InputBox = ({
   onChangeText,
   onEyePress,
   error,
+  multiline,
 }) => {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -48,6 +49,7 @@ const InputBox = ({
           onChangeText={onChangeText}
           onFocus={handleFocus}
           onBlur={handleBlur}
+          multiline={multiline}
         />
         {onEyePress && (
           <TouchableOpacity onPress={onEyePress}>

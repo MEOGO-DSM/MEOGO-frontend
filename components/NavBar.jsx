@@ -1,45 +1,62 @@
-import React from "react";
-import { Dimensions, StyleSheet, View, Text } from "react-native";
-import { Home, User, Community } from "../styles/svgs";
+import React, { useState } from "react";
+import { Dimensions, StyleSheet, View, Text, Pressable } from "react-native";
+import {
+  Home,
+  User,
+  Community,
+  Home_Fill,
+  User_Fill,
+  Community_Fill,
+} from "../styles/svgs";
 import { color } from "../styles/colors";
 import { fonts } from "../styles/fonts";
 
 function NavBar() {
+  const [activeIcon, setActiveIcon] = useState("home");
+
+  const handleIconPress = (iconName) => {
+    setActiveIcon(iconName);
+  };
+
   return (
     <View style={styles.container}>
-      <View style={styles.iconBox}>
-        <Home stroke="#A1A1AA" />
+      <Pressable style={styles.iconBox} onPress={() => handleIconPress("home")}>
+        {activeIcon === "home" ? <Home_Fill /> : <Home />}
         <Text
           style={{
             ...fonts.Captions["Captions 12 Medium"],
-            color: color.Gray[400],
+            color: activeIcon === "home" ? color.Blue[500] : color.Gray[400],
           }}
         >
           홈
         </Text>
-      </View>
-      <View style={styles.iconBox}>
-        <Community stroke="#A1A1AA" />
+      </Pressable>
+      <Pressable
+        style={styles.iconBox}
+        onPress={() => handleIconPress("community")}
+      >
+        {activeIcon === "community" ? <Community_Fill /> : <Community />}
         <Text
           style={{
             ...fonts.Captions["Captions 12 Medium"],
-            color: color.Gray[400],
+            color:
+              activeIcon === "community" ? color.Blue[500] : color.Gray[400],
           }}
         >
           게시판
         </Text>
-      </View>
-      <View style={styles.iconBox}>
-        <User stroke="#A1A1AA" />
+      </Pressable>
+      <Pressable style={styles.iconBox} onPress={() => handleIconPress("user")}>
+        {activeIcon === "user" ? <User_Fill /> : <User />}
         <Text
           style={{
             ...fonts.Captions["Captions 12 Medium"],
-            color: color.Gray[400],
+            color: activeIcon === "user" ? color.Blue[500] : color.Gray[400],
           }}
         >
           프로필
         </Text>
-      </View>
+      </Pressable>
     </View>
   );
 }

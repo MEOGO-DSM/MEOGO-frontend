@@ -7,6 +7,8 @@ import NavBar from "./components/NavBar";
 import WhatIsSvg from "./WhatIsSvg";
 import SchoolInfo from "./src/schoolInfo/page";
 import SchoolReview from "./src/schoolReview/page";
+import WritePost from "./src/community/WritePost";
+import CommunityPage from "./src/community/page";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -19,6 +21,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Main />
+      <NavBar />
     </View>
   );
 }

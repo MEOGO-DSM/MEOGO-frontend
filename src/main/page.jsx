@@ -62,8 +62,6 @@ function Main() {
           </Title>
           <WrapList2>
             <Post />
-            <Post />
-            <Post />
           </WrapList2>
         </Wrap>
         <Empty />
@@ -108,7 +106,7 @@ const More = styled.View`
 
 const Wrap = styled.View`
   margin-top: 36px;
-  gap: 16;
+  gap: 16px;
   padding: 16px 0;
 `;
 

@@ -18,7 +18,7 @@ export const region = [
   "제주도",
 ];
 
-export const highschoolCategory = [
+export const highSchoolCategory = [
   "전체 유형",
   "일반고",
   "특성화고",
@@ -26,3 +26,5 @@ export const highschoolCategory = [
   "자율고",
   "기타",
 ];
+
+export const highSchool = [];
